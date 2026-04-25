@@ -197,7 +197,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               transition={{ delay: 0.4 }}
             >
               <p>
-                I know today hasn't been easy for you. I wanted to do something special, to remind you how much you mean to me...
+                I know today hasn&apos;t been easy for you. I wanted to do something special, to remind you how much you mean to me...
               </p>
               <p className="pt-3">
                 <span className="font-semibold text-[#d898ff]">

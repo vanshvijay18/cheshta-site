@@ -184,7 +184,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 }}
               >
-                You've always got me 💜
+                You&apos;ve always got me 💜
                 <motion.span
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity, delay: 1.2 }}

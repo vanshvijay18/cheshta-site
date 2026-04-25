@@ -9,19 +9,19 @@ I know today hasn't been the best. Sometimes everything just feels heavy, and th
 
 I just wanted to remind you that you matter to me  more than I say sometimes..
 
-You don’t have to be okay all the time, and you don’t have to pretend anything with me.
+You dont have to be okay all the time, and you dont have to pretend anything with me.
 
-I’m here… not to fix everything, just to be with you through it.
+Im here… not to fix everything, just to be with you through it.
 
 And yeah… you still mean a lot to me, always
 
-I just wanted you to know that you're not alone in this. I see you, I care about you, and I'm here for you. 
+I just wanted you to know that you're not alone in this. I see you, I care about you, and Im here for you. 
 
-You're stronger than you think, kinder than you know, and you matter more than you realize. On the days when everything feels like too much, remember that it's okay to not be okay.
+Youre stronger than you think, kinder than you know, and you matter more than you realize. On the days when everything feels like too much, remember that its okay to not be okay.
 
-I'm here  not to fix everything, just to be here with you.🫂
+Im here  not to fix everything, just to be here with you.🫂
 
-You've got this, and you've got me. Always.
+You have got this, and you have  got me. Always.
 
 Walking with you through every up and down 💜`,
 
