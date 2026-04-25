@@ -130,7 +130,7 @@ export default function SealedLetter({
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl border border-pink-100 text-center"
+            className="bg-[#FFF8E7] rounded-3xl p-6 sm:p-10 shadow-2xl border border-pink-100 text-center"
           >
             {/* Gift Box Icon */}
             <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-gradient-to-br from-[#ffbcd2] to-[#ffd1dc] flex items-center justify-center shadow-inner">

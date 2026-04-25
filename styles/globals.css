@@ -5,10 +5,10 @@
 @tailwind utilities;
 
 :root {
-  --bg: #fff9ff;
-  --primary: #ffb6e6;
-  --accent: #ffd8a8;
-  --text: #2d2d2d;
+  --bg: #faf7ff;
+  --primary: #d898ff;
+  --accent: #c896ff;
+  --text: #2d1b3d;
   --font-sans:
     'Plus Jakarta Sans', 'Poppins', system-ui, -apple-system, sans-serif;
   --font-display: 'Comfortaa', 'Poppins', system-ui, sans-serif;
@@ -18,6 +18,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: all 0.3s ease;
 }
 
 html,
@@ -27,11 +28,22 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+p {
+  line-height: 1.6;
+  letter-spacing: 0.3px;
 }
 
 /* Dreamy background */
@@ -584,6 +596,29 @@ a {
 
 .animate-pulse-tiny {
   animation: pulseTiny 6s ease-in-out infinite;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
 }
 
 .animate-seal-spin {

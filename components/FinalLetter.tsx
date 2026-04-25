@@ -49,7 +49,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
 
   return (
     <div className="page-container">
-      <div className="font-display min-h-screen flex items-center justify-center py-10 px-4 bg-[#FFF4F8] relative overflow-hidden">
+      <div className="font-display min-h-screen flex items-center justify-center py-10 px-4 bg-gradient-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 z-0">
           <div className="absolute inset-0 grid-paper"></div>
           <svg
@@ -121,11 +121,11 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-[#FFF8E7] rounded-3xl p-6 sm:p-8 shadow-xl border border-pink-100"
+            className="bg-gradient-to-br from-white to-purple-50 rounded-3xl p-6 sm:p-8 shadow-xl border border-purple-200 backdrop-blur-sm"
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#f04299] flex items-center justify-center text-white shadow-md">
+                <div className="w-10 h-10 rounded-full bg-[#d898ff] flex items-center justify-center text-white shadow-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -136,41 +136,67 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="lucide lucide-mail"
+                    className="lucide lucide-heart"
                   >
-                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
                   </svg>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-[#1b0d14]">
-                  Final Love Letter
+                  Final Letter For You
                 </h3>
               </div>
             </div>
 
             <article className="handwriting text-sm sm:text-base text-[#1b0d14] leading-relaxed space-y-4">
-              <p className="text-[#f04299] font-semibold">
-                My sweetest Cutiepie,
-              </p>
-              <p>
-                You&apos;re the calm I reach for and the laugh that brightens my
-                day.
-              </p>
-              <p className="text-[#5a9bb8]">
-                I hope this tiny world made you smile — and whispered how much
-                you mean to me.
-              </p>
-              <p>
-                I&apos;ll keep making memories, big and small, always with you.
-              </p>
-              <p className="text-[#a67fb8]">
-                Forever yours, in every little universe.
-              </p>
+              <motion.p
+                className="text-[#d898ff] font-semibold"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                My Cheshta,
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                Today is your day to remember how strong you are. Even on the hardest days, you keep going.
+              </motion.p>
+              <motion.p
+                className="text-[#9a8fb8]"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                You are braver than your fears, smarter than your doubts, and stronger than your struggles. I see all of that in you.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                Thank you for letting me be part of your journey — the bright days and the hard ones.
+              </motion.p>
+              <motion.p
+                className="text-[#d898ff] font-semibold flex items-center gap-2"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1 }}
+              >
+                You've always got me 💜
+                <motion.span
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 1.2 }}
+                >
+                  💜
+                </motion.span>
+              </motion.p>
             </article>
 
             <div className="mt-6 flex flex-col sm:flex-row justify-between gap-3 items-center">
               <div className="text-xs text-[#9a4c73]">
-                Sealing will finish the experience.
+                Ready to seal this? 💜
               </div>
               <div className="flex gap-3 relative">
                 <AnimatePresence>
@@ -199,9 +225,9 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                   ref={buttonRef}
                   onClick={handleSeal}
                   disabled={isSealed}
-                  className="rounded-full bg-gradient-to-r from-[#ff9aa8] to-[#ffd1dc] px-5 py-2.5 text-sm sm:text-base font-bold shadow-md hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                  className="rounded-full bg-gradient-to-r from-[#d898ff] to-[#c896ff] px-5 py-2.5 text-sm sm:text-base font-bold text-white shadow-md hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  {isSealed ? 'Sealed 💌' : 'Seal this Letter 💌'}
+                  {isSealed ? 'Sealed 💜' : 'Seal this Letter 💜'}
                 </button>
                 {onRestart && (
                   <button

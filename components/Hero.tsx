@@ -137,26 +137,31 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
 
         {/* Main card */}
         <motion.div
-          className="relative w-full max-w-2xl bg-[#FFF8E7] rounded-2xl shadow-lg border border-pink-200 p-6 sm:p-8 md:p-10 z-10 animate-fadeIn mx-auto"
-          initial={{ opacity: 0, y: 20 }}
+          className="relative w-full max-w-2xl bg-gradient-to-br from-white via-purple-50 to-purple-100 rounded-3xl shadow-xl border border-purple-200 p-6 sm:p-8 md:p-10 z-10 backdrop-blur-sm mx-auto"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           {/* Animated GIF */}
           <div className="absolute -top-10 right-6 w-20 h-20 sm:w-24 sm:h-24 object-contain animate-bounce-slow">
-            <Image
-              src="/assets/intro-DzUiguR4.webp"
-              alt="Decorative princess day animation"
-              width={96}
-              height={96}
-              className="w-full h-full object-contain"
-              priority
-              sizes="(max-width: 640px) 80px, 96px"
-            />
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Image
+                src="/assets/intro-DzUiguR4.webp"
+                alt="Decorative princess day animation"
+                width={96}
+                height={96}
+                className="w-full h-full object-contain"
+                priority
+                sizes="(max-width: 640px) 80px, 96px"
+              />
+            </motion.div>
           </div>
 
           {/* Window controls */}
-          <div className="flex items-center justify-between border-b border-pink-200 pb-3 mb-6">
+          <div className="flex items-center justify-between border-b border-purple-200 pb-3 mb-6">
             <div className="flex items-center gap-2">
               <span className="w-3.5 h-3.5 rounded-full bg-[#ff9ec7] border border-[#f081a9]"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-[#fff07a] border border-[#f0cf52]"></span>
@@ -182,7 +187,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Hey Princess! 💕
+              Hey Cheshta! 💜
             </motion.h1>
 
             <motion.div
@@ -192,20 +197,19 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               transition={{ delay: 0.4 }}
             >
               <p>
-                I Wanted to do something special for you, for this princess day,
-                so I made something special just for you...
+                I know today hasn't been easy for you. I wanted to do something special, to remind you how much you mean to me...
               </p>
               <p className="pt-3">
-                <span className="font-semibold text-[#f04299]">
-                  Click below to see what it is! ✨
+                <span className="font-semibold text-[#d898ff]">
+                  Click below when you are ready 💜
                 </span>
-                <span className="inline-block w-1.5 h-4 bg-[#f04299]/70 ml-1 animate-cursor"></span>
+                <span className="inline-block w-1.5 h-4 bg-[#d898ff]/70 ml-1 animate-cursor"></span>
               </p>
             </motion.div>
 
             <motion.button
               onClick={onOpenGift}
-              className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300 cursor-pointer"
+              className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-[#d898ff] to-[#c896ff] text-white font-semibold shadow-lg transition-all transform hover:scale-105 active:scale-95 hover:shadow-purple-300/50 focus:outline-none focus:ring-4 focus:ring-purple-300 cursor-pointer"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -213,7 +217,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               whileTap={{ scale: 0.95 }}
               aria-label="Open my heart"
             >
-              Open My Heart 💖
+              Open Your Gift 💜
             </motion.button>
 
             {/* Decorative element */}
