@@ -1,29 +1,28 @@
 export const messageData = {
   title: 'Something Special For You 💜',
-  subtitle: 'On a day when you needed it most.',
+  subtitle: 'You are the most important person in my life.',
 
   body: `Hey Suar 🐷🩷,
 
-  
-I know today hasn't been the best. Sometimes everything just feels heavy, and that's okay.
+I know today hasn't been the best. Sometimes everything just feels heavy, and that's okay. But I need you to know something important...
 
-I just wanted to remind you that you matter to me  more than I say sometimes..
+You are not just important to me — you are THE most important person in my entire life. Seriously. Above everything, above everyone.
 
-You dont have to be okay all the time, and you dont have to pretend anything with me.
+You don't have to be okay all the time, and you definitely don't have to pretend anything with me. With you, I can just be myself too.
 
-Im here… not to fix everything, just to be with you through it.
+I'm here… not to fix everything, but to be WITH you through it all. The good days, the hard days, the messy days — I want to be there for all of it.
 
-And yeah… you still mean a lot to me, always
+You matter to me in ways that are hard to put into words. You matter MORE than I could ever say in a thousand messages.
 
-I just wanted you to know that you're not alone in this. I see you, I care about you, and Im here for you. 
+I see you, Cheshta. I see your strength even when you feel weak. I see your kindness even when you're hard on yourself. I see how amazing you are, and honestly, I don't think you realize it enough.
 
-Youre stronger than you think, kinder than you know, and you matter more than you realize. On the days when everything feels like too much, remember that its okay to not be okay.
+You're stronger than you think, kinder than you know, and you mean MORE to me than you could ever realize. On the days when everything feels like too much, remember that it's okay to not be okay — but also remember that YOU are enough. You are MORE than enough.
 
-Im here  not to fix everything, just to be here with you.🫂
+I'm here, not to fix everything, just to be here with you.🫂
 
-You have got this, and you have  got me. Always.
+You have got this, and you have got me. Always. No matter what.
 
-Walking with you through every up and down 💜`,
+Walking with you through every moment, every up and down, every tear and every smile. You're my priority, my person, my everything. 💜`
 
   cta: 'Open this when you feel like it ✨',
 

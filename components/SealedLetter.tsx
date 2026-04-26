@@ -15,11 +15,20 @@ interface KissParticle {
   rotation: number;
 }
 
+interface HugParticle {
+  id: number;
+  x: number;
+  y: number;
+  driftX: number;
+  driftY: number;
+}
+
 export default function SealedLetter({
   onExperienceAgain,
   onSendKiss,
 }: SealedLetterProps) {
   const [kissParticles, setKissParticles] = useState<KissParticle[]>([]);
+  const [hugParticles, setHugParticles] = useState<HugParticle[]>([]);
 
   const currentDate = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
@@ -49,6 +58,26 @@ export default function SealedLetter({
     // Clear particles after animation
     setTimeout(() => {
       setKissParticles([]);
+    }, 1600);
+  };
+
+  const handleSendHug = () => {
+    // Create hug particles animation (hearts embracing)
+    const particles: HugParticle[] = [];
+    for (let i = 0; i < 12; i++) {
+      particles.push({
+        id: Date.now() + i,
+        x: 50 + (Math.random() - 0.5) * 40,
+        y: 50 + (Math.random() - 0.5) * 40,
+        driftX: (Math.random() - 0.5) * 60,
+        driftY: (Math.random() - 0.5) * 60 - 30,
+      });
+    }
+    setHugParticles(particles);
+
+    // Clear particles after animation
+    setTimeout(() => {
+      setHugParticles([]);
     }, 1600);
   };
 
@@ -200,6 +229,31 @@ export default function SealedLetter({
                 ))}
               </AnimatePresence>
 
+              {/* Hug Particles Container */}
+              <AnimatePresence>
+                {hugParticles.map((particle) => (
+                  <motion.div
+                    key={particle.id}
+                    className="fixed pointer-events-none"
+                    style={{
+                      left: `${particle.x}%`,
+                      top: `${particle.y}%`,
+                    }}
+                    initial={{ opacity: 1, scale: 0.8 }}
+                    animate={{
+                      opacity: 0,
+                      scale: 1.5,
+                      x: particle.driftX,
+                      y: particle.driftY,
+                    }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.6, ease: 'easeOut' }}
+                  >
+                    <span className="text-3xl">💜</span>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+
               {onExperienceAgain && (
                 <button
                   onClick={onExperienceAgain}
@@ -210,9 +264,15 @@ export default function SealedLetter({
               )}
               <button
                 onClick={handleSendKiss}
-                className="rounded-full bg-[#9be7c4] px-5 py-2.5 text-sm sm:text-base font-medium shadow hover:brightness-95 transition cursor-pointer"
+                className="rounded-full bg-[#FFB7B2] text-white px-5 py-2.5 text-sm sm:text-base font-medium shadow hover:brightness-95 transition cursor-pointer"
               >
                 Send a Virtual Kiss 💋
+              </button>
+              <button
+                onClick={handleSendHug}
+                className="rounded-full bg-[#B5EAD7] text-white px-5 py-2.5 text-sm sm:text-base font-medium shadow hover:brightness-95 transition cursor-pointer"
+              >
+                Send a Virtual Hug 🫂
               </button>
             </div>
           </motion.div>

@@ -154,14 +154,14 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                My Cheshta,
+                My Most Beautiful Cheshta,
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Today is your day to remember how strong you are. Even on the hardest days, you keep going.
+                You are the single most important person in my life. Not just today — every single day. You are my priority, and I want you to know that with complete certainty.
               </motion.p>
               <motion.p
                 className="text-[#9a8fb8]"
@@ -169,14 +169,14 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                You are braver than your fears, smarter than your doubts, and stronger than your struggles. I see all of that in you.
+                You are braver than your fears, kinder than you believe, and so much stronger than your struggles. Even when you can't see it, I see it. I see how incredible you are.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8 }}
               >
-                Thank you for letting me be part of your journey — the bright days and the hard ones.
+                Thank you for letting me be part of your life — for trusting me, for believing in us. You mean everything to me.
               </motion.p>
               <motion.p
                 className="text-[#d898ff] font-semibold flex items-center gap-2"
@@ -184,7 +184,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 }}
               >
-                You&apos;ve always got me 💜
+                You are my everything 💜
                 <motion.span
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity, delay: 1.2 }}

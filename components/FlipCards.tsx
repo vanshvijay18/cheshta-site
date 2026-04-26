@@ -20,7 +20,7 @@ const cards: Card[] = [
   {
     id: 1,
     image: '/assets/pic1.png',
-    message: 'Hey Cheshta, you make everything better just by being here 💜',
+    message: 'You are my priority, my person, my everything. You make my world complete 💜',
     gradient: 'from-purple-200 to-pink-200',
     delay: 0,
   },
@@ -28,7 +28,7 @@ const cards: Card[] = [
     id: 2,
     image: '/assets/pic2.png',
     message:
-      "Your kindness has a way of brightening even the darkest days ✨",
+      "Your presence alone means the world to me. You are irreplaceable ✨",
     gradient: 'from-blue-200 to-purple-200',
     delay: 0.2,
   },
@@ -36,7 +36,7 @@ const cards: Card[] = [
     id: 3,
     image: '/assets/pic3.png',
     message:
-      "You matter more than you know, in more ways than you can imagine 🌸",
+      "You don't just matter — you are everything. My reason to smile, my reason to be better 🌸",
     gradient: 'from-purple-200 to-blue-200',
     delay: 0.4,
   },

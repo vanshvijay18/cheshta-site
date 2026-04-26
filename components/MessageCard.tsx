@@ -87,107 +87,150 @@ export default function MessageCard({
 
   return (
     <div className="page-container font-display relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6">
-      {/* Decorative SVGs */}
-      <svg
-        className="absolute top-10 left-10 w-8 h-8 animate-float-slow"
-        viewBox="0 0 24 24"
-        fill="none"
+      {/* Cute decorative emojis */}
+      <motion.div
+        className="absolute top-8 left-8 text-3xl"
+        animate={{ y: [0, -8, 0], rotate: [0, 10, 0] }}
+        transition={{ duration: 3, repeat: Infinity }}
       >
-        <path
-          d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z"
-          fill="#FFF7A1"
-        />
-      </svg>
+        🐼
+      </motion.div>
 
-      <svg
-        className="absolute right-10 top-16 w-10 h-10 opacity-80 animate-float"
-        viewBox="0 0 24 24"
-        fill="none"
+      <motion.div
+        className="absolute top-20 right-12 text-3xl"
+        animate={{ y: [0, 10, 0], rotate: [0, -15, 0] }}
+        transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}
       >
-        <path
-          d="M20 17.58A4.42 4.42 0 0115.58 22H7.42A4.42 4.42 0 013 17.58 4.5 4.5 0 017.5 13H8a5 5 0 019.9-1.2A3.5 3.5 0 0120 17.58z"
-          fill="#B0E0E6"
-        />
-      </svg>
+        ✨
+      </motion.div>
 
-      <svg
-        className="absolute left-12 bottom-20 w-6 h-6 animate-float-slow"
-        viewBox="0 0 24 24"
-        fill="none"
+      <motion.div
+        className="absolute bottom-24 left-10 text-4xl"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2.8, repeat: Infinity, delay: 1 }}
       >
-        <path
-          d="M12 21s-6-4.35-8.5-6.5C1.85 12.73 3 9 6 8c2.28-.75 3.5 1 6 1s3.72-1.75 6-1c3 1 4.15 4.73 2.5 6.5C18 16.65 12 21 12 21z"
-          fill="#FFD1DC"
-        />
-      </svg>
+        🐷
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-12 right-8 text-3xl"
+        animate={{ y: [0, -6, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, delay: 0.3 }}
+      >
+        🎀
+      </motion.div>
 
       <div className="w-full max-w-3xl">
         {/* Header */}
-        <div className="flex items-center justify-center gap-2 mb-6 animate-slideDown">
+        <motion.div
+          className="flex items-center justify-center gap-2 mb-8 animate-slideDown"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
           <div className="text-center">
-            <h2 className="text-[#d898ff] text-lg sm:text-xl font-bold leading-tight">
-              A Letter From My Heart 💜
+            <h2 className="text-primary text-2xl sm:text-3xl font-bold leading-tight">
+              A Letter For You 💌
             </h2>
-            <div className="text-xs text-[#9a4c73] mt-1">
-              Just for you, Cheshta
+            <div className="text-sm text-secondary/60 mt-2">
+              From the heart, just for Cheshta
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Container */}
-        <div className="bg-gradient-to-br from-white via-purple-50 to-purple-100 rounded-3xl p-6 sm:p-8 border border-purple-200 shadow-xl animate-fadeIn overflow-hidden backdrop-blur-sm">
+        <motion.div
+          className="bg-gradient-to-br from-soft-white via-primary/5 to-accent/10 rounded-3xl p-8 sm:p-10 border-2 border-primary/20 shadow-cute-lg animate-fadeIn overflow-hidden backdrop-blur-sm"
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 15 }}
+        >
           <AnimatePresence mode="wait">
             {!isEnvelopeOpen ? (
               <motion.div
                 key="envelope-closed"
-                className="flex flex-col items-center justify-center min-h-[400px] relative"
+                className="flex flex-col items-center justify-center min-h-[450px] relative"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ type: 'spring', stiffness: 100 }}
               >
-                <div
-                  className="relative cursor-pointer transition-all duration-700 transform hover:scale-110 hover:-rotate-2"
+                {/* Cute wiggling envelope */}
+                <motion.div
+                  className="relative cursor-pointer mb-8"
+                  whileHover={{ scale: 1.05 }}
+                  animate={{ y: [0, -2, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
                   onClick={handleEnvelopeClick}
                 >
-                  <div className="relative w-72 sm:w-80 h-52 sm:h-56 mx-auto">
-                    {/* Envelope base */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg shadow-lg border-2 border-purple-300" />
-
-                    {/* Envelope flap */}
-                    <div
-                      className="absolute -top-1 left-0 right-0 h-24 sm:h-28 bg-gradient-to-br from-[#d898ff] to-[#c896ff]"
-                      style={{
-                        clipPath: 'polygon(0px 0px, 100% 0px, 50% 100%)',
-                        borderRadius: '8px 8px 0px 0px',
-                      }}
+                  <div className="relative w-72 sm:w-96 h-56 sm:h-64 mx-auto">
+                    {/* Envelope base - cute pastel pink */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80 rounded-2xl shadow-cute-lg border-2 border-primary/30"
+                      animate={{ rotate: isEnvelopeOpen ? 0 : [0, -1, 1, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: 'loop' }}
                     />
 
-                    {/* Heart seal */}
-                    <div className="absolute top-10 sm:top-12 left-1/2 transform -translate-x-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-[#d898ff] rounded-full flex items-center justify-center text-white text-lg sm:text-xl shadow-md animate-pulse">
-                      💜
-                    </div>
+                    {/* Envelope flap - wiggling effect */}
+                    <motion.div
+                      className="absolute top-2 left-0 right-0 h-32 bg-gradient-to-b from-primary via-primary to-accent-warm rounded-t-2xl"
+                      style={{
+                        clipPath: 'polygon(0px 0px, 100% 0px, 50% 100%)',
+                      }}
+                      animate={{ rotateX: isEnvelopeOpen ? -180 : 0, rotateZ: isEnvelopeOpen ? 0 : [-1, 1, -1, 0] }}
+                      transition={{
+                        rotateX: { duration: 0.6, ease: 'easeInOut' },
+                        rotateZ: { duration: 1.5, repeat: Infinity, repeatType: 'loop' },
+                      }}
+                      style={{ transformStyle: 'preserve-3d', transformOrigin: 'center top' }}
+                    />
 
-                    {/* Decorative hearts */}
-                    <div className="absolute -top-2 -right-2 text-purple-300 text-sm animate-bounce-slow">
+                    {/* Cute heart seal */}
+                    <motion.div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-accent rounded-full flex items-center justify-center text-2xl shadow-md border-2 border-accent/50 z-10">
                       💜
-                    </div>
-                    <div
-                      className="absolute -bottom-2 -left-2 text-purple-300 text-xs animate-bounce-slow"
-                      style={{ animationDelay: '0.5s' }}
+                      <motion.div
+                        className="absolute inset-0 bg-accent rounded-full"
+                        initial={{ scale: 1, opacity: 0.6 }}
+                        animate={{ scale: [1, 1.3, 1], opacity: [0.6, 0, 0.6] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        style={{ zIndex: -1 }}
+                      />
+                    </motion.div>
+
+                    {/* Decorative cute elements */}
+                    <motion.div
+                      className="absolute -top-4 -right-4 text-3xl"
+                      animate={{ y: [0, -4, 0], rotate: [0, 15, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
                     >
-                      💜
-                    </div>
+                      💕
+                    </motion.div>
+                    <motion.div
+                      className="absolute -bottom-2 -left-6 text-2xl"
+                      animate={{ y: [0, 4, 0], rotate: [0, -10, 0] }}
+                      transition={{ duration: 2.2, repeat: Infinity, delay: 0.5 }}
+                    >
+                      💖
+                    </motion.div>
                   </div>
 
-                  <div className="text-center mt-6">
-                    <p className="text-sm text-[#9a4c73] mb-2">
-                      Click to open
-                    </p>
-                    <div className="inline-block px-4 py-2 bg-purple-50 rounded-full text-xs font-medium text-[#d898ff] border border-purple-200 animate-pulse">
-                      Ready? 💜
-                    </div>
-                  </div>
-                </div>
+                  {/* Instructions */}
+                  <motion.div className="text-center mt-8">
+                    <motion.p
+                      className="text-secondary text-lg font-semibold mb-3"
+                      animate={{ opacity: [0.7, 1, 0.7] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      Click to open ✨
+                    </motion.p>
+                    <motion.div
+                      className="inline-block px-6 py-3 bg-primary/15 rounded-full text-accent-warm font-bold border-2 border-primary/30 text-sm"
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      Ready? Let's begin! 💌
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
               </motion.div>
             ) : (
               <motion.div
@@ -195,28 +238,26 @@ export default function MessageCard({
                 className="w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
               >
                 {!showLetter && (
                   <motion.div
-                    className="relative w-72 sm:w-80 h-52 sm:h-56 mx-auto mb-6"
-                    style={{ perspective: '1000px' }}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
+                    className="relative w-72 sm:w-96 h-56 sm:h-64 mx-auto mb-8"
+                    initial={{ opacity: 1, rotateX: 0 }}
+                    animate={{ opacity: 0, rotateX: 90 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    style={{ transformStyle: 'preserve-3d' }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg shadow-lg border-2 border-purple-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80 rounded-2xl shadow-cute-lg border-2 border-primary/30" />
                     <motion.div
-                      className="absolute -top-1 left-0 right-0 h-24 sm:h-28 bg-gradient-to-br from-[#d898ff] to-[#c896ff]"
+                      className="absolute top-2 left-0 right-0 h-32 bg-gradient-to-b from-primary via-primary to-accent-warm rounded-t-2xl"
                       style={{
-                        clipPath: 'polygon(0px 0px, 100% 0px, 50% 0px)',
-                        borderRadius: '8px 8px 0px 0px',
-                        transformOrigin: 'top center',
-                        transformStyle: 'preserve-3d',
+                        clipPath: 'polygon(0px 0px, 100% 0px, 50% 100%)',
                       }}
-                      initial={{ rotateX: 0, y: 0 }}
-                      animate={{ rotateX: -160, y: -20 }}
+                      initial={{ rotateX: 0 }}
+                      animate={{ rotateX: -180, y: -20 }}
                       transition={{ duration: 0.6, ease: 'easeInOut' }}
+                      style={{ transformStyle: 'preserve-3d', transformOrigin: 'top center' }}
                     />
                   </motion.div>
                 )}
@@ -225,50 +266,68 @@ export default function MessageCard({
                   {showLetter && (
                     <motion.div
                       className="relative w-full"
-                      initial={{ y: 30, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+                      initial={{ y: 40, opacity: 0, scale: 0.95 }}
+                      animate={{ y: 0, opacity: 1, scale: 1 }}
+                      transition={{ type: 'spring', stiffness: 100, damping: 15, delay: 0.3 }}
                     >
-                      <div className="bg-white rounded-xl p-6 sm:p-8 shadow-inner border border-pink-100 relative">
-                        <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-pink-50 to-transparent rounded-xl" />
+                      {/* Cute notebook paper style letter */}
+                      <div className="bg-soft-white rounded-2xl p-8 sm:p-10 shadow-lg border-2 border-accent/20 relative">
+                        {/* Paper texture lines (optional) */}
+                        <div className="absolute inset-0 opacity-5 pointer-events-none rounded-2xl bg-repeat-y" style={{ backgroundImage: 'repeating-linear-gradient(to right, transparent, transparent 2px, #FFB7B2 2px, #FFB7B2 4px)' }} />
 
-                        <div
-                          className="absolute -top-6 -right-6 animate-float-slow opacity-80 pointer-events-none z-30"
-                          style={{ transform: 'rotate(15deg)' }}
-                        >
-                          <Image
-                            src="/assets/letter-C680mUtz.webp"
-                            alt="Love letter"
-                            width={96}
-                            height={96}
-                            className="w-24 h-auto object-contain drop-shadow-lg"
-                            unoptimized
-                          />
-                        </div>
+                        {/* Cute tape corners */}
+                        <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-accent-warm/40 to-accent-warm/20 rotate-45 rounded-sm shadow-sm" />
+                        <div className="absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br from-accent-warm/40 to-accent-warm/20 -rotate-45 rounded-sm shadow-sm" />
+                        <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-gradient-to-br from-accent-warm/40 to-accent-warm/20 -rotate-45 rounded-sm shadow-sm" />
+                        <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-accent-warm/40 to-accent-warm/20 rotate-45 rounded-sm shadow-sm" />
 
                         <div className="relative z-10">
-                          <div className="flex items-center justify-between mb-4 pb-3 border-b border-pink-100">
-                            <div className="flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-[#f04299] flex items-center justify-center text-white text-sm">
+                          {/* Letter header */}
+                          <div className="flex items-center justify-between mb-6 pb-4 border-b-2 border-primary/20">
+                            <div className="flex items-center gap-3">
+                              <motion.div
+                                className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent-warm flex items-center justify-center text-lg"
+                                animate={{ rotate: [0, 10, -10, 0] }}
+                                transition={{ duration: 3, repeat: Infinity }}
+                              >
                                 💝
-                              </div>
-                              <span className="text-sm font-semibold text-[#9a4c73]">
+                              </motion.div>
+                              <span className="text-lg font-bold text-primary">
                                 My Sweetest Love
                               </span>
                             </div>
                           </div>
 
-                          <div className="handwriting text-sm sm:text-base leading-relaxed text-[#1b0d14] pb-20 pt-6">
-                            <div className="mb-4 text-[#f04299] font-medium">
-                              My dearest Cheshta,
-                            </div>
-                            <div className="mb-6 text-justify" style={{ textIndent: '2rem' }}>
+                          {/* Letter content */}
+                          <div className="handwriting text-base sm:text-lg leading-relaxed text-secondary pb-24 pt-4">
+                            <motion.div
+                              className="mb-4 text-primary font-bold text-xl"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ delay: 0.5 }}
+                            >
+                              My Dearest Cheshta,
+                            </motion.div>
+                            <motion.div
+                              className="mb-8 text-justify leading-relaxed"
+                              style={{ textIndent: '2rem' }}
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ delay: 0.7 }}
+                            >
                               {messageData.body}
-                            </div>
-                            <div className="mt-8 ml-auto w-fit">
-                              <div className="font-medium text-[#f04299]">
+                            </motion.div>
+
+                            {/* Signature */}
+                            <motion.div
+                              className="mt-12 ml-auto w-fit"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ delay: 0.9 }}
+                            >
+                              <div className="font-semibold text-primary text-lg">
                                 <TypewriterText
-                                  text="With all my love, Always yours 💜"
+                                  text="With all my love,"
                                   duration={2}
                                   delay={0}
                                   onComplete={() =>
@@ -280,25 +339,37 @@ export default function MessageCard({
                                   showCursor={false}
                                 />
                               </div>
-                            </div>
+                            </motion.div>
                           </div>
-                        </div>
 
-                        <div className="absolute bottom-24 right-4 text-pink-300 opacity-30 text-xs animate-float-slow" style={{ animationDelay: '1s' }}>
-                          💕
+                          {/* Cute floating decoration */}
+                          <motion.div
+                            className="absolute bottom-6 right-6 text-accent opacity-40 text-3xl"
+                            animate={{ y: [0, -6, 0], rotate: [0, 10, 0] }}
+                            transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                          >
+                            🌸
+                          </motion.div>
                         </div>
                       </div>
 
+                      {/* Continue button */}
                       {typewriterComplete.signature && (
-                        <div className="flex justify-center mt-6 animate-slideUp">
-                          <button
+                        <motion.div
+                          className="flex justify-center mt-8 animate-slideUp"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                        >
+                          <motion.button
                             onClick={() => setShowPlaylist(true)}
-                            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-[#d898ff] to-[#c896ff] text-white font-semibold shadow-lg transition-all transform hover:scale-105 active:scale-95 hover:shadow-purple-300/50 focus:outline-none focus:ring-4 focus:ring-purple-300 cursor-pointer text-sm sm:text-base"
+                            className="inline-flex items-center justify-center px-8 sm:px-10 py-4 rounded-full bg-gradient-to-r from-primary to-accent-warm text-white font-bold shadow-cute-lg transition-all transform focus:outline-none focus:ring-4 focus:ring-primary/30 cursor-pointer text-base sm:text-lg"
+                            whileHover={{ scale: 1.08 }}
+                            whileTap={{ scale: 0.95 }}
                             aria-label="Continue to playlist"
                           >
                             Continue To See More ✨
-                          </button>
-                        </div>
+                          </motion.button>
+                        </motion.div>
                       )}
                     </motion.div>
                   )}
@@ -306,7 +377,7 @@ export default function MessageCard({
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
