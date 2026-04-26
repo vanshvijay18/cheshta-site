@@ -242,6 +242,7 @@ export default function MessageCard({
                             width={96}
                             height={96}
                             className="w-24 h-auto object-contain drop-shadow-lg"
+                            unoptimized
                           />
                         </div>
 

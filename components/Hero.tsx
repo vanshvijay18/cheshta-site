@@ -156,6 +156,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
                 className="w-full h-full object-contain"
                 priority
                 sizes="(max-width: 640px) 80px, 96px"
+                unoptimized
               />
             </motion.div>
           </div>
@@ -231,6 +232,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
                 width={80}
                 height={80}
                 className="w-20 h-auto object-contain"
+                unoptimized
               />
             </div>
           </div>
