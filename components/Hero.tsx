@@ -164,7 +164,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
             >
               <p>
-                I know today hasn't been easy. But I need you to know something...
+                I know today hasn&apos;t been easy. But I need you to know something...
               </p>
               <p>
                 You are the MOST important person in my life. And I wanted to show you just how much you mean to me. 💜

@@ -22,7 +22,7 @@ I'm here, not to fix everything, just to be here with you.🫂
 
 You have got this, and you have got me. Always. No matter what.
 
-Walking with you through every moment, every up and down, every tear and every smile. You're my priority, my person, my everything. 💜`
+Walking with you through every moment, every up and down, every tear and every smile. You're my priority, my person, my everything. 💜`,
 
   cta: 'Open this when you feel like it ✨',
 

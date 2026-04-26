@@ -169,7 +169,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                You are braver than your fears, kinder than you believe, and so much stronger than your struggles. Even when you can't see it, I see it. I see how incredible you are.
+                You are braver than your fears, kinder than you believe, and so much stronger than your struggles. Even when you can&apos;t see it, I see it. I see how incredible you are.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}

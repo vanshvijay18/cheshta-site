@@ -175,13 +175,14 @@ export default function MessageCard({
                       className="absolute top-2 left-0 right-0 h-32 bg-gradient-to-b from-primary via-primary to-accent-warm rounded-t-2xl"
                       style={{
                         clipPath: 'polygon(0px 0px, 100% 0px, 50% 100%)',
+                        transformStyle: 'preserve-3d', 
+                        transformOrigin: 'center top'
                       }}
                       animate={{ rotateX: isEnvelopeOpen ? -180 : 0, rotateZ: isEnvelopeOpen ? 0 : [-1, 1, -1, 0] }}
                       transition={{
                         rotateX: { duration: 0.6, ease: 'easeInOut' },
                         rotateZ: { duration: 1.5, repeat: Infinity, repeatType: 'loop' },
                       }}
-                      style={{ transformStyle: 'preserve-3d', transformOrigin: 'center top' }}
                     />
 
                     {/* Cute heart seal */}
@@ -227,7 +228,7 @@ export default function MessageCard({
                       animate={{ scale: [1, 1.05, 1] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     >
-                      Ready? Let's begin! 💌
+                      Ready? Let&apos;s begin! 💌
                     </motion.div>
                   </motion.div>
                 </motion.div>
@@ -253,11 +254,12 @@ export default function MessageCard({
                       className="absolute top-2 left-0 right-0 h-32 bg-gradient-to-b from-primary via-primary to-accent-warm rounded-t-2xl"
                       style={{
                         clipPath: 'polygon(0px 0px, 100% 0px, 50% 100%)',
+                        transformStyle: 'preserve-3d', 
+                        transformOrigin: 'top center'
                       }}
                       initial={{ rotateX: 0 }}
                       animate={{ rotateX: -180, y: -20 }}
                       transition={{ duration: 0.6, ease: 'easeInOut' }}
-                      style={{ transformStyle: 'preserve-3d', transformOrigin: 'top center' }}
                     />
                   </motion.div>
                 )}
